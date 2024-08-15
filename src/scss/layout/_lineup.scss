@@ -1,0 +1,110 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.bg-cian{
+    background-color: v.$cian;
+
+
+    li:nth-child(odd){
+        background-color: darken(v.$cian, 10%);
+    }
+}
+
+.bg-naranja{
+    background-color: v.$naranja;
+
+
+    li:nth-child(odd){
+        background-color: darken(v.$naranja, 10%);
+    }
+}
+
+
+
+
+.lineup{
+
+    background-color: v.$moradoOscuro;
+    padding: 5rem 0rem;
+
+    h3, .dia{
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    .dia{
+        text-transform: uppercase;
+        margin: 5rem auto;
+    }
+    
+    h3{
+        font-weight: 700;
+    }
+    
+}
+
+.escenario-contenedor{
+    @include m.tablet {
+        @include m.grid(2, 5);
+    }
+    
+}
+
+
+.escenario{
+    width: auto;
+    margin: 2rem;
+   
+
+    p{
+        
+        &:after{
+            content: '';
+            display: block;
+            width: 15rem;
+            height: 15rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 2rem auto 0rem auto;
+        }
+    }
+}
+
+.pop .nombre-escenario::after{
+    background-image: url(../img/icono_edm.png);
+}
+.rock .nombre-escenario::after{
+    background-image: url(../img/icono_rock.png);
+}
+.hiphop .nombre-escenario::after{
+    background-image: url(../img/icono_hiphop.png);
+}
+.jazz .nombre-escenario::after{
+    background-image: url(../img/icono_jazz.png);
+    
+}
+
+
+
+.nombre-escenario{
+    text-align: center;
+    padding: 2rem;  
+}
+
+.calendario{
+    @include m.resetear-lista;
+
+    li{
+        padding: 2.5rem;
+    }
+
+    font-size: 2rem;
+    font-weight: 700;
+    span{
+        font-weight: 400;
+    }
+}
+
+

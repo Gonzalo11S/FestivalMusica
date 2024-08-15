@@ -1,0 +1,61 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+
+.video{
+    position: relative;
+    max-height: 45rem;
+    min-height: 30rem;
+    overflow: hidden;
+
+    .overlay{
+        position: absolute;
+        background: rgb(0,35,36);
+        background: linear-gradient(63deg, rgba(0,35,36,0.6905695383622199) 0%, rgba(0,255,105,0.11353872603728987) 100%); 
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
+
+
+    video{
+        display: block;
+        width: auto;
+        @include m.tablet {
+            width: 100%;
+        }
+        
+        
+        
+    }
+}
+
+
+.contenido-video{
+    z-index: 1;
+    
+    
+
+    h2{
+        color: v.$blanco;
+        font-size: 4rem;
+
+        @include m.telefono {
+            font-size: 5rem;
+        }
+    }
+
+    p{
+        font-size: 1.6rem;
+        background-color: v.$rojoOscuro;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-weight: 700;
+        margin: 0;
+    }
+
+}
